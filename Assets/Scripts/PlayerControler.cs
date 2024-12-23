@@ -19,9 +19,11 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]private float moveSpeed = 5f;
 
     private float rightBorder;
+    private Animator animator;
 
     private void Start(){
         rightBorder = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x;
+        animator = GetComponent<Animator>();
     }
 
     private void Update(){
@@ -30,6 +32,10 @@ public class PlayerControler : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse0)){
             BackgroundMove();
+            animator.SetBool("isWalking", true);
+            // GameManager.Instance.StartGame();
+        }else{
+            animator.SetBool("isWalking", false);
         }
     }
 
