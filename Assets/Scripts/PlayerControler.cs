@@ -33,7 +33,6 @@ public class PlayerControler : MonoBehaviour
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse0)){
             BackgroundMove();
             animator.SetBool("isWalking", true);
-            // GameManager.Instance.StartGame();
         }else{
             animator.SetBool("isWalking", false);
         }
@@ -74,6 +73,13 @@ public class PlayerControler : MonoBehaviour
             firstElement.position = new Vector3(list[list.Count - 1].position.x + list[0].GetComponent<SpriteRenderer>().bounds.size.x, list[0].position.y, list[0].position.z);
             list.RemoveAt(0);
             list.Add(firstElement);
+        }
+    }
+
+    private void OnCollisionEnter(Collision e){
+        Debug.Log("发生了碰撞");
+        if(e.gameObject.tag == "Enemy"){
+            GameManager.Instance.StartGame();
         }
     }
 }
