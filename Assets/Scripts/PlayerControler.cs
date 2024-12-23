@@ -15,6 +15,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]private Transform background5;
     [SerializeField]private List<Transform> background5Array;
     [SerializeField]private Transform ground;
+    [SerializeField]private LayerMask WhatIsEnemy;
 
     [SerializeField]private float moveSpeed = 5f;
 
@@ -35,6 +36,9 @@ public class PlayerControler : MonoBehaviour
             animator.SetBool("isWalking", true);
         }else{
             animator.SetBool("isWalking", false);
+        }
+        if(Physics2D.Raycast(transform.position, Vector2.right, 1f, WhatIsEnemy)){
+            GameManager.Instance.StartGame();
         }
     }
 
@@ -76,10 +80,9 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision e){
-        Debug.Log("发生了碰撞");
-        if(e.gameObject.tag == "Enemy"){
-            GameManager.Instance.StartGame();
-        }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.right);
     }
+
 }
