@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "EastTravel.sln"
+    "dotnet.defaultSolution": "UnityGameJam.sln"
 }

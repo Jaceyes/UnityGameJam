@@ -25,6 +25,9 @@ public class PlayerControler : MonoBehaviour
     }
 
     private void Update(){
+        if(GameManager.Instance.IsInDiceGame){
+            return;
+        }
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse0)){
             BackgroundMove();
         }
