@@ -2076,7 +2076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779073327691576, guid: 4a72ec928131c564d82f4c340bbe6de5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114033649008315920, guid: 4a72ec928131c564d82f4c340bbe6de5, type: 3}
       propertyPath: diceToHold.Array.size
@@ -3572,7 +3572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373018636112980, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114009958367922184, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: diceHolder
@@ -3878,7 +3878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1391574766633782, guid: 28d93decf92813d4da4dd87b48f5923e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223653957596697710, guid: 28d93decf92813d4da4dd87b48f5923e, type: 3}
       propertyPath: m_Camera
@@ -5731,7 +5731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4455616759900982204, guid: 84f173aeeeda7459ebda48d47e7558d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4455616759900982205, guid: 84f173aeeeda7459ebda48d47e7558d9, type: 3}
       propertyPath: rollDiceButton
@@ -8711,7 +8711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373018636112980, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114009958367922184, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: diceHolder
@@ -9293,7 +9293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1157919732678096, guid: c2bf16519a233e64798653e06049dd08, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223376860491328304, guid: c2bf16519a233e64798653e06049dd08, type: 3}
       propertyPath: m_Camera
@@ -9770,7 +9770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373018636112980, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114009958367922184, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: diceHolder
@@ -10688,7 +10688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373018636112980, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114009958367922184, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: diceHolder
@@ -14176,7 +14176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373018636112980, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114009958367922184, guid: c489c4c0b18ba4d4fbc8e9e4264f912c, type: 3}
       propertyPath: diceHolder
@@ -17615,7 +17615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1488654353863602, guid: b908a7c86f54e1a4e832cd14a3e69486, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114290867760896794, guid: b908a7c86f54e1a4e832cd14a3e69486, type: 3}
       propertyPath: diceToRoll.Array.size
