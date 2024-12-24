@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Textboxes
+    uniqueID: 4226460363
+    locked: 0
+  - name: YahtzeeBox
+    uniqueID: 4264860617
+    locked: 0
+  - name: Die
+    uniqueID: 1269382571
+    locked: 0

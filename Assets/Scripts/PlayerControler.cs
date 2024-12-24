@@ -16,11 +16,13 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]private List<Transform> background5Array;
     [SerializeField]private Transform ground;
     [SerializeField]private LayerMask WhatIsEnemy;
+    [SerializeField]private GameObject[] gamePanel;
 
     [SerializeField]private float moveSpeed = 5f;
 
     private float rightBorder;
     private Animator animator;
+    private bool IsInDiceGame = false;
 
     private void Start(){
         rightBorder = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x;
@@ -28,7 +30,7 @@ public class PlayerControler : MonoBehaviour
     }
 
     private void Update(){
-        if(GameManager.Instance.IsInDiceGame){
+        if(IsInDiceGame){
             return;
         }
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse0)){
@@ -37,8 +39,9 @@ public class PlayerControler : MonoBehaviour
         }else{
             animator.SetBool("isWalking", false);
         }
-        if(Physics2D.Raycast(transform.position, Vector2.right, 1f, WhatIsEnemy)){
-            GameManager.Instance.StartGame();
+        if(Physics2D.Raycast(transform.position, Vector2.right, 2, WhatIsEnemy)){
+            animator.SetBool("isWalking", false);
+            GameStart();
         }
     }
 
@@ -80,9 +83,16 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    private void GameStart(){
+        for(int i = 0; i < gamePanel.Length; i++){
+            gamePanel[i].SetActive(true);
+        }
+        IsInDiceGame = true;
+    }
+
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.right);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.right*2);
     }
 
 }
