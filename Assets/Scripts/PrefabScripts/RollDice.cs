@@ -187,11 +187,11 @@ public class RollDice : MonoBehaviour
 	/// <summary>
 	/// This rolls the dice in the roll holder
 	/// </summary>
-	void StartRollDice()
+	public void StartRollDice()
 	{
 		if (rollsLeft == 1)
 		{
-
+			print("Last Roll");
 			// This tells the dice roll holder and dice that it is not able to hold dice
 			diceRollHolder.SetHolderEnabled(false);
 			for (int i = 0; i < dieScripts.Length; i++)
@@ -201,7 +201,6 @@ public class RollDice : MonoBehaviour
 		}
 		if (AreaClear() && rollsLeft > 0)
 		{
-
 			// This tells the scorecard that the dice have been rolled
 			scorecard.DiceRolled();
 

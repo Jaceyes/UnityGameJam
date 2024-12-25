@@ -22,7 +22,7 @@ public class ScoringBoxYahtzee : ScoreCardBox
 		return true;
 	}
 
-	protected override void CategorySelected()
+	public override void CategorySelected()
 	{
 		base.CategorySelected();
 		scoringColumn.JokerAvailableToColumn();

@@ -171,7 +171,7 @@ public abstract class ScoreCardBox : MonoBehaviour
 	/// <summary>
 	/// This updates and fills in the category and starts a new turn
 	/// </summary>
-	protected virtual void CategorySelected()
+	public virtual void CategorySelected()
 	{
 		if (!JokerForcedAway(this) && columnPlayable)
 		{
