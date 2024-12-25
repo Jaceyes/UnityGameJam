@@ -29,13 +29,22 @@ public class DiceActionApi: MonoBehaviour
     public void SetDice(Die die, int value){
         die.SetDie(value);
     }
-
+    /// <summary>
+    /// 投骰子,并设置骰子的值
+    /// </summary>
+    /// <param name="dies"></param>
+    /// <param name="number"></param>
     public void RollDice(Die[] dies,int[] number){
         rollDice.StartRollDice();
         for(int i = 0; i < dies.Length; i++){
             SetDice(dies[i],number[i]);
         }
     }
+    /// <summary>
+    /// 移动骰子到holder区域
+    /// </summary>
+    /// <param name="dies"></param>
+    /// <param name="numbers"></param>
     public void DiesToHolder(Die[] dies,int[] numbers){
         for(int i = 0; i < dies.Length; i++){
             isMoved[i] = false;
@@ -49,6 +58,11 @@ public class DiceActionApi: MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// 移动骰子到roll区域
+    /// </summary>
+    /// <param name="dies"></param>
+    /// <param name="numbers"></param>
     public void DiesToRoll(Die[] dies,int[] numbers){
         for(int i = 0; i < dies.Length; i++){
             isMoved[i] = false;
@@ -75,6 +89,10 @@ public class DiceActionApi: MonoBehaviour
         die.MoveDie(diceToRoll.transform.position, 0.3f);
         die.MoveDieIntoRollHolder();
     }
+    /// <summary>
+    /// 设置分数
+    /// </summary>
+    /// <param name="index"></param>
     public void CategorySelected(int index){
         switch(index){
             case 0:

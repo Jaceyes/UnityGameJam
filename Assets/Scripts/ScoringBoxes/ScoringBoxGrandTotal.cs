@@ -33,6 +33,10 @@ public class ScoringBoxGrandTotal : ScoreCardBox
 			boxFilledIn = true;
 			SetIfTextGrayedOut(false);
 			SetIfBoxSelcted(false);
+			if(transform.parent.name == "Player2")
+			{
+				GameManager.Instance.GameOver();
+			}
 		}
 	}
 

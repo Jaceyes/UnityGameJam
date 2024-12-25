@@ -5466,6 +5466,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86316cea00779419888dae4162808f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &939040350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 939040352}
+  - component: {fileID: 939040351}
+  m_Layer: 0
+  m_HasEditorInfo: 1
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939040351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939040350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa563d038a32c214e8a01fd049a2cad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePanel:
+  - {fileID: 498715852}
+  - {fileID: 633459962}
+  - {fileID: 851503792}
+  - {fileID: 1018555234}
+  - {fileID: 352020298}
+  - {fileID: 1393378357}
+  - {fileID: 1982110654}
+  - {fileID: 353770060}
+  - {fileID: 936412727}
+  - {fileID: 1357514205}
+  IsInDiceGame: 0
+--- !u!4 &939040352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939040350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 73.02235, y: 13.364483, z: -0.1946056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &940043997
 GameObject:
   m_ObjectHideFlags: 0
@@ -9446,6 +9503,23 @@ MonoBehaviour:
   rollDice: {fileID: 936412732}
   diceToHolder: {fileID: 1393378358}
   diceToRoll: {fileID: 1982110655}
+  scoringBoxAces: {fileID: 1859332960}
+  scoringBoxTwos: {fileID: 1653197190}
+  scoringBoxThrees: {fileID: 924524250}
+  scoringBoxFours: {fileID: 1995709644}
+  scoringBoxFives: {fileID: 116429964}
+  scoringBoxSixes: {fileID: 1832557095}
+  scoringBoxThreeOfAKind: {fileID: 728814632}
+  scoringBoxFourOfAKind: {fileID: 832704897}
+  scoringBoxFullHouse: {fileID: 1308964759}
+  scoringBoxSmallStraight: {fileID: 797625209}
+  scoringBoxLargeStraight: {fileID: 1618277588}
+  scoringBoxYahtzee: {fileID: 985503285}
+  scoringBoxChance: {fileID: 675838473}
+  scoringBoxBonus: {fileID: 1608719072}
+  scoringBoxTopTotal: {fileID: 1454382458}
+  scoringBoxBottomTotal: {fileID: 1735741965}
+  scoringBoxGrandTotal: {fileID: 1350064117}
 --- !u!1 &1179436005
 GameObject:
   m_ObjectHideFlags: 0
@@ -13894,17 +13968,6 @@ MonoBehaviour:
   WhatIsEnemy:
     serializedVersion: 2
     m_Bits: 8
-  gamePanel:
-  - {fileID: 498715852}
-  - {fileID: 633459962}
-  - {fileID: 851503792}
-  - {fileID: 1018555234}
-  - {fileID: 352020298}
-  - {fileID: 1393378357}
-  - {fileID: 1982110654}
-  - {fileID: 353770060}
-  - {fileID: 936412727}
-  - {fileID: 1357514205}
   moveSpeed: 5
 --- !u!70 &1899672428
 CapsuleCollider2D:
@@ -18516,3 +18579,4 @@ SceneRoots:
   - {fileID: 980450250}
   - {fileID: 940044001}
   - {fileID: 1995755750}
+  - {fileID: 939040352}

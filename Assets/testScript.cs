@@ -7,6 +7,7 @@ public class testScript : MonoBehaviour
 {
     [SerializeField]private DiceActionApi diceActionApi;
     [SerializeField]private Die[] dies;
+    int index = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class testScript : MonoBehaviour
             // diceActionApi.RollDice(dies,numbers);
             // diceActionApi.DiesToRoll(dies,numbers);
             // diceActionApi.DiesToHolder(dies,new int[]{6});
-            diceActionApi.CategorySelected(2);
+            diceActionApi.CategorySelected(index++);
         });
     }
 }
