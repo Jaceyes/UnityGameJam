@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,10 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] private GameObject[] gamePanel;
+    [SerializeField] private ScoringBoxGrandTotal playerScore;
+    [SerializeField] private ScoringBoxGrandTotal enemyScore;
+    [SerializeField] private PlayerControler playerControler;
+
     private EnemyGameControler enemyGameControler;
     public GameObject currentEnemy;
     
@@ -45,6 +50,21 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        if(playerScore.score > enemyScore.score)
+        {
+            Debug.Log("Player Win");
+            playerControler.GetGreatDice();
+        }
+        else if(playerScore.score < enemyScore.score)
+        {
+            Debug.Log("Enemy Win");
+            playerControler.LoseGreatDice();
+        }
+        else
+        {
+            Debug.Log("Draw");
+        }
+
         for (int i = 0; i < gamePanel.Length; i++)
         {
             gamePanel[i].SetActive(false);

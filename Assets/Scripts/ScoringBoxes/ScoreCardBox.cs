@@ -24,7 +24,7 @@ public abstract class ScoreCardBox : MonoBehaviour
 	/// <summary>
 	/// This tells the score of the box (0 until filled in unless special box)
 	/// </summary>
-	protected int score;
+	public int score;
 
 	/// <summary>
 	/// The grayed out and normal colors for when the button is being hovered over

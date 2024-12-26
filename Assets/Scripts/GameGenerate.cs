@@ -19,7 +19,7 @@ public class GameGenerate
     public List<Round> rounds;
     public GameGenerate(){}
 
-    public void Generate()
+    public void Generate(int difficulty)
     {
         patterns = new List<int>(13);
         rounds = new List<Round>(13);
@@ -27,7 +27,7 @@ public class GameGenerate
             patterns.Add(i);
         for (int i = 0; i < 13; i++)
         {
-            rounds.Add(new Round(patterns, 1));
+            rounds.Add(new Round(patterns, difficulty));
         }
     }
 }

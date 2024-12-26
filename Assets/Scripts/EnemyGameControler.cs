@@ -15,7 +15,7 @@ public class EnemyGameControler : MonoBehaviour
     private WaitForSeconds wait = new WaitForSeconds(1);
     public void GenerateGame()
     {
-        GameGenerate.Instance.Generate();
+        GameGenerate.Instance.Generate(5);
         currentRound = 0;
         for (int i = 0; i < GameGenerate.Instance.rounds.Count; i++)
         {

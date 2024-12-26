@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
@@ -16,9 +17,13 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]private List<Transform> background5Array;
     [SerializeField]private Transform ground;
     [SerializeField]private LayerMask WhatIsEnemy;
+
+    [SerializeField] private TextMeshProUGUI GreatDiceNumText;
     
 
     [SerializeField]private float moveSpeed = 5f;
+
+    [SerializeField]private int GreatDiceNum = 0;
 
     private float rightBorder;
     private Animator animator;
@@ -26,6 +31,7 @@ public class PlayerControler : MonoBehaviour
     private void Start(){
         rightBorder = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x;
         animator = GetComponent<Animator>();
+        UpdateGreatDiceNum();
     }
 
     private void Update(){
@@ -86,5 +92,17 @@ public class PlayerControler : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position, transform.position + Vector3.right*2);
     }
-
+    public void GetGreatDice(){
+        GreatDiceNum++;
+        UpdateGreatDiceNum();
+    }
+    public void LoseGreatDice(){
+        GreatDiceNum = GreatDiceNum>0?GreatDiceNum-1:0;
+        UpdateGreatDiceNum();
+    }
+    private void UpdateGreatDiceNum(){
+        GreatDiceNum = PlayerPrefs.GetInt("GreatDiceNum", 0);
+        GreatDiceNumText.text = GreatDiceNum.ToString();
+        PlayerPrefs.SetInt("GreatDiceNum", GreatDiceNum);
+    }
 }
