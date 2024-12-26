@@ -21,6 +21,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI GreatDiceNumText;
     [SerializeField]private Transform firstGround;
     [SerializeField]private Transform secondGround;
+    private Transform enemy;
     private Transform tempGround;
 
     [SerializeField]private float moveSpeed = 5f;
@@ -31,6 +32,7 @@ public class PlayerControler : MonoBehaviour
     private Animator animator;
 
     private void Start(){
+        enemy = GameObject.Find("Enemy").transform;
         rightBorder = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x;
         animator = GetComponent<Animator>();
         UpdateGreatDiceNum();
@@ -46,7 +48,7 @@ public class PlayerControler : MonoBehaviour
         }else{
             animator.SetBool("isWalking", false);
         }
-        if(Physics2D.Raycast(transform.position, Vector2.right, 2, WhatIsEnemy)){
+        if(Physics2D.Raycast(transform.position, Vector2.right, 4, WhatIsEnemy)){
             animator.SetBool("isWalking", false);
             GameManager.Instance.GameStart();
         }
@@ -83,6 +85,10 @@ public class PlayerControler : MonoBehaviour
             tempGround = firstGround;
             firstGround = secondGround;
             secondGround = tempGround;
+            GameManager.Instance.InitEnemy();
+        }
+        if(enemy.position.x <= -30){
+            GameManager.Instance.InitEnemy();
         }
     }
 
@@ -98,7 +104,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.right*2);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.right*4);
     }
     public void GetGreatDice(){
         GreatDiceNum++;
