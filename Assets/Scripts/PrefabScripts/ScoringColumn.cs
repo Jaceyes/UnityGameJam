@@ -53,6 +53,11 @@ public class ScoringColumn : MonoBehaviour
 	public Scorecard scorecard;
 
 	/// <summary>
+	/// 控制敌方游戏的控制器
+	/// </summary>
+	private EnemyGameControler enemyGameControler;
+
+	/// <summary>
 	/// This hides all of the grayed out text in the boxes excluding yahtzee bonus
 	/// </summary>
 	void HideGrayedOutScores()
@@ -187,7 +192,10 @@ public class ScoringColumn : MonoBehaviour
 	/// </summary>
 	public void NewTurn()
 	{
-
+		print("New Turn");
+		print(transform.name);
+		if (transform.name == "Player2")
+			enemyGameControler.EnemyTurn();
 		// This sets the rolls to 3, increases the turn count, and tells the scorecard that a category was selected
 		rollsLeft = 3;
 		turnReady = true;
@@ -216,6 +224,7 @@ public class ScoringColumn : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+		enemyGameControler = GameObject.Find("Enemy").GetComponent<EnemyGameControler>();
 		Initialize();
 	}
 

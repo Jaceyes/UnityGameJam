@@ -13,10 +13,14 @@ public class testScript : MonoBehaviour
     {
         int[] numbers = {1,2,3,4,5};
         GetComponent<Button>().onClick.AddListener(() => {
-            // diceActionApi.RollDice(dies,numbers);
-            // diceActionApi.DiesToRoll(dies,numbers);
-            // diceActionApi.DiesToHolder(dies,new int[]{6});
-            diceActionApi.CategorySelected(index++);
+            GameGenerate gameGenerate = new GameGenerate();
+            for(int i = 0; i < gameGenerate.rounds.Count; i++){
+                print("Round " + i + " : " + gameGenerate.rounds[i].pattern);
+                for(int j = 0; j < gameGenerate.rounds[i].dicesNum.Length; j++){
+                    print(gameGenerate.rounds[i].dicesNum[j]);
+                }
+                print("------------------\n");
+            }
         });
     }
 }

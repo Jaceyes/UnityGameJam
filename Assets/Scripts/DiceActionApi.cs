@@ -40,54 +40,48 @@ public class DiceActionApi: MonoBehaviour
             SetDice(dies[i],number[i]);
         }
     }
+    public void RollDiceRandom(){
+        rollDice.StartRollDice();
+    }
     /// <summary>
     /// 移动骰子到holder区域
     /// </summary>
     /// <param name="dies"></param>
     /// <param name="numbers"></param>
-    public void DiesToHolder(Die[] dies,int[] numbers){
-        for(int i = 0; i < dies.Length; i++){
+    public List<Die> DiesToHolder(Die[] dies,int[] numbers){
+        for(int i = 0; i < 5; i++){
             isMoved[i] = false;
         }
-        for(int i = 0; i < numbers.Length; i++){
-            for(int j=0;j<dies.Length;j++){
-                if(dies[j].number == numbers[i] && !isMoved[j]){
-                    DieToHolder(dies[j]);
-                    isMoved[j] = true;
-                }
-            }
-        }
-    }
-    /// <summary>
-    /// 移动骰子到roll区域
-    /// </summary>
-    /// <param name="dies"></param>
-    /// <param name="numbers"></param>
-    public void DiesToRoll(Die[] dies,int[] numbers){
+        List<Die> dieList = new List<Die>();
         for(int i = 0; i < dies.Length; i++){
-            isMoved[i] = false;
-        }
-        for(int i = 0; i < numbers.Length; i++){
-            for(int j=0;j<dies.Length;j++){
-                if(dies[j].number == numbers[i] && !isMoved[j]){
-                    DieToRoll(dies[j]);
+            bool isMoveToHolder = false;
+            for(int j=0;j<numbers.Length;j++){
+                if(dies[i].number == numbers[j] && !isMoved[j]){
+                    DieToHolder(dies[i]);
                     isMoved[j] = true;
+                    isMoveToHolder = true;
+                    break;
                 }
             }
+            if(!isMoveToHolder){
+                DieToRoll(dies[i]);
+                dieList.Add(dies[i]);
+            }
         }
+        return dieList;
     }
 
     private void DieToHolder(Die die){
         if(die.DieInHolder() || die.DieInRollHolder())
             return;
-        die.MoveDie(diceToHolder.transform.position, 0.3f);
         die.MoveDieIntoHolder();
+        die.MoveDie(diceToHolder.transform.position, 0.3f);
     }
     private void DieToRoll(Die die){
         if(die.DieInHolder() || die.DieInRollHolder())
             return;
-        die.MoveDie(diceToRoll.transform.position, 0.3f);
         die.MoveDieIntoRollHolder();
+        die.MoveDie(diceToRoll.transform.position, 0.3f);
     }
     /// <summary>
     /// 设置分数

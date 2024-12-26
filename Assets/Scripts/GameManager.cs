@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] private GameObject[] gamePanel;
+    private EnemyGameControler enemyGameControler;
     public GameObject currentEnemy;
     
     public bool IsInDiceGame = false;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentEnemy = GameObject.Find("Enemy");
+        enemyGameControler = currentEnemy.GetComponent<EnemyGameControler>();
     }
 
     public void GameStart()
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
             gamePanel[i].SetActive(true);
         }
         IsInDiceGame = true;
+        enemyGameControler.GenerateGame();
     }
     public void GameOver()
     {

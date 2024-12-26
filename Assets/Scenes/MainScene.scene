@@ -5507,6 +5507,7 @@ MonoBehaviour:
   - {fileID: 353770060}
   - {fileID: 936412727}
   - {fileID: 1357514205}
+  currentEnemy: {fileID: 0}
   IsInDiceGame: 0
 --- !u!4 &939040352
 Transform:
@@ -9355,6 +9356,7 @@ GameObject:
   - component: {fileID: 1148514213}
   - component: {fileID: 1148514216}
   - component: {fileID: 1148514217}
+  - component: {fileID: 1148514218}
   m_Layer: 3
   m_HasEditorInfo: 1
   m_Name: Enemy
@@ -9520,6 +9522,25 @@ MonoBehaviour:
   scoringBoxTopTotal: {fileID: 1454382458}
   scoringBoxBottomTotal: {fileID: 1735741965}
   scoringBoxGrandTotal: {fileID: 1350064117}
+--- !u!114 &1148514218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148514211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463f18e8deaea9449a883bcdf0c0d0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dices:
+  - {fileID: 498715854}
+  - {fileID: 633459964}
+  - {fileID: 851503794}
+  - {fileID: 1018555236}
+  - {fileID: 352020300}
+  diceToRoll: {fileID: 1982110655}
 --- !u!1 &1179436005
 GameObject:
   m_ObjectHideFlags: 0

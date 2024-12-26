@@ -199,6 +199,7 @@ public class RollDice : MonoBehaviour
 				dieScripts[i].SetIfDieCanEnterRollHolder(false);
 			}
 		}
+		
 		if (AreaClear() && rollsLeft > 0)
 		{
 			// This tells the scorecard that the dice have been rolled
@@ -217,7 +218,7 @@ public class RollDice : MonoBehaviour
 
 			// The dice to roll is received from the dice roll holder script
 			diceToRoll = diceRollHolder.DiceToBeRolled();
-
+			print("Dice to Roll: " + diceToRoll.Count);
 			// This rolls each die in the roll holder
 			for (int i = 0; i < diceToRoll.Count; i++)
 			{

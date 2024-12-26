@@ -75,7 +75,7 @@ public class DiceToRoll : MonoBehaviour
 	/// <summary>
 	/// This initializes private variables and the box collider component
 	/// </summary>
-	void Initialize()
+	public void Initialize()
 	{
 		diceHeld = 5;
 		diceInHolder = new bool[5] { true, true, true, true, true };
