@@ -89,7 +89,7 @@ public abstract class ScoreCardBox : MonoBehaviour
 	/// <summary>
 	/// This initializes components, sets the visual settings for when the box starts, and sets private variables
 	/// </summary>
-	protected void Initialize()
+	public void Initialize()
 	{
 		textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
 		boxSelectionSpriteRenderer = transform.Find("BoxSelection").GetComponent<SpriteRenderer>();

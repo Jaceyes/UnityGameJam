@@ -29,6 +29,7 @@ public class EnemyGameControler : MonoBehaviour
     }
     public void EnemyTurn()
     {
+        GameManager.Instance.isPlayerTurn = false;
         diceToRoll.Initialize();
         StartCoroutine(EnemyRoll());
     }
@@ -53,23 +54,38 @@ public class EnemyGameControler : MonoBehaviour
         diceActionApi.CategorySelected(GameGenerate.Instance.rounds[currentRound].pattern);
         NextRound();
         yield return null;
+        GameManager.Instance.isPlayerTurn = true;
     }
-    private void FindLastRollNum(){
+    private void FindLastRollNum()
+    {
         List<int> list1 = GameGenerate.Instance.rounds[currentRound].dicesNum.ToList();
         List<int> list2 = new List<int>(5);
+        bool[] isMoved = new bool[5];
         List<Die> lastRollDices = new List<Die>();
-        for(int i = 0; i<5;i++){
+        for (int i = 0; i < 5; i++)
+        {
             list2.Add(dices[i].number);
             lastRollDices.Add(dices[i]);
+            isMoved[i] = false;
         }
 
-        for(int i = 0; i<list1.Count;i++){
-            for(int j = 0; j<list2.Count;j++){
-                if(list1[i] == list2[j]){
+        for (int i = list1.Count - 1; i >= 0; i--)
+        {
+            for (int j = 0; j < list2.Count; j++)
+            {
+                if (list1[i] == list2[j] && !isMoved[j])
+                {
                     list1.RemoveAt(i);
-                    list2.RemoveAt(j);
+                    isMoved[j] = true;
                     break;
                 }
+            }
+        }
+        for(int i = isMoved.Length-1;i>=0;i--)
+        {
+            if(isMoved[i])
+            {
+                lastRollDices.RemoveAt(i);
             }
         }
         this.lastRollNum = list1.ToArray();

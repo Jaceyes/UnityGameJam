@@ -48,7 +48,7 @@ public class PlayerControler : MonoBehaviour
         }else{
             animator.SetBool("isWalking", false);
         }
-        if(Physics2D.Raycast(transform.position, Vector2.right, 4, WhatIsEnemy)){
+        if(Physics2D.Raycast(transform.position, Vector2.right, 2, WhatIsEnemy)){
             animator.SetBool("isWalking", false);
             GameManager.Instance.GameStart();
         }
@@ -85,7 +85,6 @@ public class PlayerControler : MonoBehaviour
             tempGround = firstGround;
             firstGround = secondGround;
             secondGround = tempGround;
-            GameManager.Instance.InitEnemy();
         }
         if(enemy.position.x <= -30){
             GameManager.Instance.InitEnemy();
@@ -104,7 +103,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.right*4);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.right*2);
     }
     public void GetGreatDice(){
         GreatDiceNum++;

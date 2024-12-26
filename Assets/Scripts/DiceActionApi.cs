@@ -37,6 +37,8 @@ public class DiceActionApi: MonoBehaviour
     public void RollDice(Die[] dies,int[] number){
         rollDice.StartRollDice();
         for(int i = 0; i < dies.Length; i++){
+            if(dies[i].DieInHolder())
+                continue;
             SetDice(dies[i],number[i]);
         }
     }

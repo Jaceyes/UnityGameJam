@@ -153,7 +153,7 @@ public class RollDice : MonoBehaviour
 	{
 
 		// This checks if the left mouse button was clicked
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0)&& GameManager.Instance.isPlayerTurn)
 		{
 
 			// This checks if the mouse overlaps the box collider of the button and then rolls the dice in the holder
