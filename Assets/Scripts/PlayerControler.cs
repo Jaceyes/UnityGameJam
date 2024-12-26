@@ -19,7 +19,9 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]private LayerMask WhatIsEnemy;
 
     [SerializeField] private TextMeshProUGUI GreatDiceNumText;
-    
+    [SerializeField]private Transform firstGround;
+    [SerializeField]private Transform secondGround;
+    private Transform tempGround;
 
     [SerializeField]private float moveSpeed = 5f;
 
@@ -75,6 +77,12 @@ public class PlayerControler : MonoBehaviour
         }
         if(background5Array[background5Array.Count-2].position.x<= transform.position.x){
             AddBackground(background5Array);
+        }
+        if(firstGround.position.x <= -35){
+            firstGround.position = secondGround.position + Vector3.right*35;
+            tempGround = firstGround;
+            firstGround = secondGround;
+            secondGround = tempGround;
         }
     }
 
